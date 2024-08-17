@@ -1,7 +1,6 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from 'react';
-import './App.css';
 
 export default function Home() {
     const [notes, setNotes] = useState([]);
@@ -9,7 +8,6 @@ export default function Home() {
 
     useEffect(() => {
         fetchNotes();
-        //I was fetching notes from backend hosted server, but without authentication, it wasn't a good idea to keep all notes in same place
     }, []);
 
     const fetchNotes = () => {
@@ -22,7 +20,9 @@ export default function Home() {
     };
 
     const addNote = () => {
-        if (newNote.trim()) {
+        // Trim only leading and trailing spaces, not spaces between lines
+        const trimmedNote = newNote.trim();
+        if (trimmedNote) {
             const newNotes = [...notes, { id: Date.now(), note: newNote }];
             localStorage.setItem('notes', JSON.stringify(newNotes));
             setNotes(newNotes);
@@ -59,7 +59,7 @@ export default function Home() {
                                     className="delete-button"
                                     onClick={() => deleteNote(note.id)}
                                 >
-                                    Delete
+                                    &times;
                                 </button>
                             </div>
                         ))
