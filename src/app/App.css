@@ -62,10 +62,10 @@ button:hover {
 .note {
     background-color: #1e1e1e;
     border: 1px solid #333;
-    padding-top: 15px;
+    padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     margin: 10px;
     border-radius: 8px;
     position: relative;
@@ -75,19 +75,19 @@ button:hover {
 
 .delete-button {
     position: absolute;
-    bottom: 5px;
+    top: 10px;
     right: 10px;
-    background-color: red;
-    border-radius: 4px;
-    color: white;
+    background: none;
     border: none;
-    padding: 5px 10px;
+    color: #ff0000;
+    font-size: 20px;
     cursor: pointer;
 }
 
 .delete-button:hover {
-    opacity: 0.8;
+    color: #ff0000;
 }
+
 
 
 html, body {
@@ -138,4 +138,17 @@ html, body {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+.note {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    text-align: left; /* Ensure text is aligned properly */
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
 }
